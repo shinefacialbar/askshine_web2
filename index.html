@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShineAI Chat</title>
+  <style>
+    body, html {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: white;
+    }
+    #bp-web-widget-container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="bp-web-widget-container"></div>
+
+  <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+  <script>
+    window.botpressWebChat.init({
+      botId: "24163add-edc2-4cec-9d41-0540a02f89f0",
+      clientId: "b07c334c-de8f-4195-8e8b-0c9f2d3a18fe",
+      hostUrl: "https://cdn.botpress.cloud/webchat/v0",
+      messagingUrl: "https://messaging.botpress.cloud",
+      botName: "ShineAI Skincare Chat",
+      showBotInfoPage: false,
+      hideWidget: true,
+      disableAnimations: true,
+      containerWidth: "100%",
+      layoutWidth: "100%",
+      stylesheet: "https://webchat-styler-css.botpress.app/prod/code/51a24706-66e4-4f9d-a30d-f1a9591f42fe/v19731/style.css"
+    });
+
+    window.botpressWebChat.onEvent(() => {
+      window.botpressWebChat.sendEvent({ type: "show" });
+    }, ["LIFECYCLE.LOADED"]);
+  </script>
+</body>
+</html>
