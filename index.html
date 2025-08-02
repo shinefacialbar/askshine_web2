@@ -3,30 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shine AI Chat</title>
+  <title>Ask Shine - Esthetician Chat</title>
   <style>
-    html, body {
+    body {
+      background-color: #fff6e5;
+      font-family: 'Helvetica', sans-serif;
       margin: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #fffbe9;
-      font-family: sans-serif;
+      padding: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
-    #bp-web-widget-container {
-      width: 100vw;
-      height: 100vh;
+    #loading {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <div id="bp-web-widget-container">
-    <h2>If you're seeing this, the chat widget is still loading...</h2>
-  </div>
+  <div id="loading">Launching Shine esthetician chat...</div>
 
-  <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-  <script src="https://files.bpcontent.cloud/2025/07/29/02/20250729022220-TDO8SOED.js"></script>
+  <!-- Botpress Scripts -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+  <script src="https://files.bpcontent.cloud/2025/07/29/02/20250729022220-TDO8SOED.js" defer></script>
+
+  <!-- Script to hide loading text once widget appears -->
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data.name === 'webchat:loaded') {
+        document.getElementById('loading').style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
