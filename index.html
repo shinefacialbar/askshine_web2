@@ -3,42 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShineAI Chat</title>
+  <title>Shine AI Chat</title>
   <style>
-    body, html {
+    html, body {
       margin: 0;
+      padding: 0;
       height: 100%;
-      overflow: hidden;
-      background-color: white;
+      background-color: #ffffff;
+      font-family: sans-serif;
     }
     #bp-web-widget-container {
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
-  <div id="bp-web-widget-container"></div>
-
   <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
   <script>
     window.botpressWebChat.init({
-      botId: "24163add-edc2-4cec-9d41-0540a02f89f0",
-      clientId: "b07c334c-de8f-4195-8e8b-0c9f2d3a18fe",
-      hostUrl: "https://cdn.botpress.cloud/webchat/v0",
-      messagingUrl: "https://messaging.botpress.cloud",
-      botName: "ShineAI Skincare Chat",
-      showBotInfoPage: false,
-      hideWidget: true,
-      disableAnimations: true,
-      containerWidth: "100%",
-      layoutWidth: "100%",
-      stylesheet: "https://webchat-styler-css.botpress.app/prod/code/51a24706-66e4-4f9d-a30d-f1a9591f42fe/v19731/style.css"
+      "botId": "24163add-edc2-4cec-9d41-0540a02f89f0",
+      "clientId": "b07c334c-de8f-4195-8e8b-0c9f2d3a18fe",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "botName": "Shine AI",
+      "stylesheet": "",
+
+      "containerWidth": "100%",
+      "layoutWidth": "100%",
+      "hideWidget": true,
+      "disableAnimations": false,
+      "showBotInfoPage": false,
+
+      // Auto-open chat
+      "startOpen": true
     });
 
-    window.botpressWebChat.onEvent(() => {
-      window.botpressWebChat.sendEvent({ type: "show" });
-    }, ["LIFECYCLE.LOADED"]);
+    // Make sure it loads on page load
+    window.botpressWebChat.onEvent(
+      function () {
+        window.botpressWebChat.sendEvent({ type: "show" });
+      },
+      ["LIFECYCLE.LOADED"]
+    );
   </script>
 </body>
 </html>
