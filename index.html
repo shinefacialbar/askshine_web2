@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shine AI Chat</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #fdf2e6; /* Shine-friendly light peach background */
-    }
-    iframe {
-      border: none;
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
-</head>
-<body>
-  <iframe
-    src="https://webchat.botpress.cloud/embed?botId=24163add-edc2-4cec-9d41-0540a02f89f0"
-    allow="microphone; camera"
-    title="Shine AI Chat"
-  ></iframe>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shine Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js" defer></script>
+    <script>
+      window.botpressWebChat = {
+        botId: "24163add-edc2-4cec-9d41-0540a02f89f0",
+        hostUrl: "https://cdn.botpress.cloud/webchat/v1",
+        messagingUrl: "https://messaging.botpress.cloud",
+        clientId: "24163add-edc2-4cec-9d41-0540a02f89f0",
+        lazyLoad: false,
+        showPoweredBy: false,
+        themeName: "prism",
+        layout: "full-page" // this makes it full screen, not a button
+      };
+    </script>
+  </head>
+  <body style="margin:0;background:#fff;">
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        window.botpressWebChat.init();
+      });
+    </script>
+  </body>
 </html>
