@@ -2,25 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Shine Chat</title>
+    <title>Shine AI Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js" defer></script>
     <script>
       window.botpressWebChat = {
         botId: "24163add-edc2-4cec-9d41-0540a02f89f0",
+        clientId: "24163add-edc2-4cec-9d41-0540a02f89f0",
         hostUrl: "https://cdn.botpress.cloud/webchat/v1",
         messagingUrl: "https://messaging.botpress.cloud",
-        clientId: "24163add-edc2-4cec-9d41-0540a02f89f0",
-        lazyLoad: false,
-        showPoweredBy: false,
         themeName: "prism",
-        layout: "full-page" // this makes it full screen, not a button
+        showPoweredBy: false,
+        layout: "full-page", // Full screen layout
+        containerWidth: "100vw",
+        containerHeight: "100vh"
       };
     </script>
   </head>
-  <body style="margin:0;background:#fff;">
+  <body style="margin:0;padding:0;">
     <script>
-      window.addEventListener("DOMContentLoaded", function () {
+      window.addEventListener("DOMContentLoaded", () => {
         window.botpressWebChat.init();
       });
     </script>
